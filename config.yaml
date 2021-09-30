@@ -1,0 +1,8 @@
+# 邮箱配置文件
+# mail_pass: "ZLYZFFYYZDFTGBFC"
+mail_pass: "你的邮箱授权码"
+# mail_account:"xxxxx@163.com"
+mail_account: "你的邮箱账号"
+# mail_host: "smtp.163.com"
+mail_host: "你使用的邮箱服务器"
+send_config: false
