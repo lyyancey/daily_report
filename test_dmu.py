@@ -6,11 +6,12 @@ import datetime
 from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 from email.header import Header
-import time
-import os
 import json
 import random
 import yaml
+import logging
+
+logging.basicConfig(filename="log.txt", level=logging.DEBUG)
 
 class Report():
     def __init__(self) -> None:
@@ -60,11 +61,12 @@ class Mail():
             sftp_obj.login(self.sender, self.mail_pass)
             sftp_obj.sendmail(self.sender, receivers, msg_root.as_string())
             sftp_obj.quit()
-            print('sendemail successful!')
+            logging.debug('sendemail successful!')
             return '邮件发送成功'
         except Exception as e:
-            print('sendemail failed next is the reason')
-            print(e)
+            logging.debug('sendemail failed next is the reason:')
+            logging.debug(e)
+            logging.debug('\n')
             return '邮件发送失败'
 
 class DataLoder():
@@ -100,7 +102,9 @@ if __name__ == '__main__':
     for user_info in user_infos:
         url = report.create_url(user_info["uuid_number"], user_info["uuid_name"], user_info["class_num"], user_info["mor"], user_info["aft"], user_info["ni"], user_info["trail"], user_info["people"])
         res = report.request_h(url)
-        print(res.text,'\n')
+        logging.debug("填报返回的信息为：")
+        logging.debug(res.text)
+        logging.debug('\n')
         if mail_config["send_email"] and user_info["is_send"]:
             res = json.loads(res.text)
             status = '填报失败'
