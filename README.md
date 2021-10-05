@@ -4,7 +4,6 @@
 
 - python 3.7
 - requests==2.20
-- urllib3==1.23
 - pyyaml==5.4.1
 
 ## 配置方式
@@ -55,7 +54,41 @@
 4. 设置自动进行每日填报
 
    - Windows 10下
-     - 可以采用win10的任务计划程序，[参见这里](https://www.cnblogs.com/JesseP/p/10816192.html)
+     - 鼠标右击我的电脑选择管理
+
+       ![管理](./pic/pic_1.png "图一")
+
+     - 选择任务计划程序下的Windows
+
+       !["Win10"](E:\daily_report\daily_report\pic\pic_2.png)
+
+     - 选择创建任务
+
+       !["创建任务"](E:\daily_report\daily_report\pic\pic_3.png)
+
+     - 填写内容
+
+       ![](E:\daily_report\daily_report\pic\pic_4.png)
+
+       ![](E:\daily_report\daily_report\pic\pic_5.png)
+
+       ![](E:\daily_report\daily_report\pic\pic_6.png)
+
+       ![](E:\daily_report\daily_report\pic\pic_7.png)
+
+       
+
+       
+
+       ![](E:\daily_report\daily_report\pic\pic_8.png)
+
+       ![](E:\daily_report\daily_report\pic\pic_9.png)
+
+       ![](E:\daily_report\daily_report\pic\pic_10.png)
+
+       
+
+       
    - Linux
      - 待更
 
