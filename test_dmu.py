@@ -12,14 +12,14 @@ import yaml
 import logging
 import time
 
-logging.basicConfig(filename="log.txt", level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename="log.txt", level=logging.INFO, format='%(asctime)s - %(filename)s - %(lineno)d - %(name)s - %(levelname)s - %(message)s')
 
 class Report():
     def __init__(self):
         pass
 
     def create_url(self, uuid_number, uuid_name, class_num, mor, aft, ni, trail, people):
-        return 'https://www.dmuisatc.com/DMU_WEB/student_5/info/?jsonnumber={}&jsonname={}&jsonclass={}%E7%BA%A7%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E4%B8%AD%E9%98%9F&morning={}%E2%84%83&afternoon={}%E2%84%83&night={}%E2%84%83&jsonbody=1&jsonbodychangeinfo=&textarea={}&textprople={}&jsontouch=1&jsontouchchangeinfo=0&jsonisolate=1&jsonisolatechangeinfo=0&latitude=38.86838&longitude=121.52678'.format(uuid_number, quote(uuid_name), class_num, mor, aft, ni, quote(trail), quote(people))
+        return 'https://www.informationofdum.com/DMU_WEB/student_5/info/?jsonnumber={}&jsonname={}&jsonclass={}%E7%BA%A7%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E4%B8%AD%E9%98%9F&morning={}%E2%84%83&afternoon={}%E2%84%83&night={}%E2%84%83&jsonbody=1&jsonbodychangeinfo=&textarea={}&textprople={}&jsontouch=1&jsontouchchangeinfo=0&jsonisolate=1&jsonisolatechangeinfo=0&latitude=38.86838&longitude=121.52678'.format(uuid_number, quote(uuid_name), class_num, mor, aft, ni, quote(trail), quote(people))
 
     def request_h(self, url):
         headers = {
@@ -28,11 +28,13 @@ class Report():
             "User-Agent": "Mozilla/5.0",
             "Referer": "https://servicewechat.com/wx8a86613d14cbe10c/12/page-frame.html",
             "Connection": "close",
-            "Host": "www.dmuisatc.com:443"
+            "Host": "www.informationofdum.com:443",
+            "Transfer-Encoding": "chunked"
         }
         try:
             r = requests.get(url, headers=headers)
         except Exception as e:
+            print(e)
             logging.info("创建连接时发生错误：\n")
             logging.info(e)
 
