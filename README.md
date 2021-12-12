@@ -97,3 +97,5 @@
 6. 如果遇到问题的话，可以开个Issues,有好的改进方案欢迎拉个pr
 
 7. 最后，喜欢本项目的话可以给个star。😀🥰
+
+![Alt](https://repobeats.axiom.co/api/embed/a6732457012b5dcb27f1f18150ea58719eb3e886.svg "Repobeats analytics image")
